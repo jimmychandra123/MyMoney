@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">MyMoney</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Welcome user!</string>
+    <string name="nav_header_subtitle">user@mymoney.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_logout">Log out</string>
+
+
+    <string name="menu_dashboard">Dashboard</string>
+    <string name="menu_balance">Balance</string>
+    <string name="menu_header_transaction">Transaction</string>
+    <string name="menu_income">Income</string>
+    <string name="menu_outcome">Outcome</string>
+    <string name="menu_transfer">Transfer</string>
+</resources>
