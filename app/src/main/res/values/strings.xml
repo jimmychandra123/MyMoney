@@ -14,4 +14,26 @@
     <string name="menu_income">Income</string>
     <string name="menu_outcome">Outcome</string>
     <string name="menu_transfer">Transfer</string>
+    <string name="title_activity_login">Sign in</string>
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="welcome">"Welcome !"</string>
+    <string name="invalid_username">Not a valid username</string>
+    <string name="invalid_password">Password must be >5 characters</string>
+    <string name="login_failed">"Login failed"</string>
+    <string name="havent_register">Haven\'t got an account yet ? Register now!</string>
+
+    // Register Form
+    <string name="register">Register</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="full_name">Full name</string>
+    <string name="email">Email</string>
+    <string name="birth_date">Birth date</string>
+    <string name="birth_place">Birth place</string>
+    <string name="address">Address</string>
+    <string name="back_to_login">Back to login</string>
+
 </resources>
