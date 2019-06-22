@@ -46,7 +46,7 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login);
 
         btnLogin = findViewById(R.id.btnLogin);
-        edtUsername = findViewById(R.id.edtLoginPassword);
+        edtUsername = findViewById(R.id.edtLoginUsername);
         edtPassword = findViewById(R.id.edtLoginPassword);
         progressBar = findViewById(R.id.progressBar);
         tvRegister = findViewById(R.id.tvRegister);

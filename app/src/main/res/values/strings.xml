@@ -14,6 +14,15 @@
     <string name="menu_income">Income</string>
     <string name="menu_outcome">Outcome</string>
     <string name="menu_transfer">Transfer</string>
+
+    <string-array name="nav_item_activity_titles">
+        <item>Dashboard</item>
+        <item>Balance</item>
+        <item>Income</item>
+        <item>Outcome</item>
+        <item>Transfer</item>
+    </string-array>
+
     <string name="title_activity_login">Sign in</string>
     <string name="prompt_email">Email</string>
     <string name="prompt_password">Password</string>
@@ -35,5 +44,8 @@
     <string name="birth_place">Birth place</string>
     <string name="address">Address</string>
     <string name="back_to_login">Back to login</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>

@@ -69,39 +69,14 @@
         app:layout_constraintTop_toBottomOf="@+id/tvPassword" />
 
     <TextView
-        android:id="@+id/tvFullname"
+        android:id="@+id/tvEmail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:text="@string/full_name"
+        android:text="@string/email"
         app:layout_constraintEnd_toEndOf="@+id/edtRegisterPassword"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/edtRegisterPassword"
         app:layout_constraintTop_toBottomOf="@+id/edtRegisterPassword" />
-
-    <EditText
-        android:id="@+id/edtRegisterFullname"
-        android:layout_width="307dp"
-        android:layout_height="40dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:selectAllOnFocus="true"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvFullname" />
-
-    <TextView
-        android:id="@+id/tvEmail"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:text="@string/email"
-        app:layout_constraintEnd_toEndOf="@+id/edtRegisterFullname"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/edtRegisterFullname"
-        app:layout_constraintTop_toBottomOf="@+id/edtRegisterFullname" />
 
     <EditText
         android:id="@+id/edtRegisterEmail"
@@ -116,91 +91,18 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvEmail" />
 
-    <TextView
-        android:id="@+id/tvBirthdate"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:text="@string/birth_date"
-        app:layout_constraintEnd_toEndOf="@+id/edtRegisterEmail"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/edtRegisterEmail"
-        app:layout_constraintTop_toBottomOf="@+id/edtRegisterEmail" />
-
-    <EditText
-        android:id="@+id/edtRegisterBirthDate"
-        android:layout_width="307dp"
-        android:layout_height="40dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
-        android:clickable="true"
-        android:editable="false"
-        android:ems="10"
-        android:enabled="true"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvBirthdate" />
-
-    <TextView
-        android:id="@+id/tvBirthplace"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:text="@string/birth_place"
-        app:layout_constraintEnd_toEndOf="@+id/edtRegisterBirthDate"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/edtRegisterBirthDate"
-        app:layout_constraintTop_toBottomOf="@+id/edtRegisterBirthDate" />
-
-    <EditText
-        android:id="@+id/edtRegisterBirthPlace"
-        android:layout_width="307dp"
-        android:layout_height="40dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:selectAllOnFocus="true"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvBirthplace" />
-
-    <TextView
-        android:id="@+id/tvAddress"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:text="@string/address"
-        app:layout_constraintEnd_toEndOf="@+id/edtRegisterBirthPlace"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/edtRegisterBirthPlace"
-        app:layout_constraintTop_toBottomOf="@+id/edtRegisterBirthPlace" />
-
-    <EditText
-        android:id="@+id/edtRegisterAddress"
-        android:layout_width="307dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
-        android:ems="10"
-        android:gravity="start|top"
-        android:inputType="textMultiLine"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvAddress" />
-
     <Button
         android:id="@+id/btnRegister"
         android:layout_width="307dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
-        android:text="@string/register"
         android:onClick="fnRegister"
+        android:text="@string/register"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edtRegisterAddress" />
+        app:layout_constraintTop_toBottomOf="@+id/edtRegisterEmail" />
 
     <Button
         android:id="@+id/btnBackToLogin"

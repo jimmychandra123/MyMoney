@@ -13,22 +13,19 @@
             android:icon="@drawable/ic_menu_balance"
             android:title="@string/menu_balance" />
     </group>
-
-    <item android:title="@string/menu_header_transaction">
-        <menu>
-            <item
-                android:id="@+id/nav_income"
-                android:icon="@drawable/ic_menu_income"
-                android:title="@string/menu_income" />
-            <item
-                android:id="@+id/nav_outcome"
-                android:icon="@drawable/ic_menu_outcome"
-                android:title="@string/menu_outcome" />
-            <item
-                android:id="@+id/nav_transfer"
-                android:icon="@drawable/ic_menu_transfer"
-                android:title="@string/menu_transfer" />
-        </menu>
-    </item>
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_income"
+            android:icon="@drawable/ic_menu_income"
+            android:title="@string/menu_income" />
+        <item
+            android:id="@+id/nav_outcome"
+            android:icon="@drawable/ic_menu_outcome"
+            android:title="@string/menu_outcome" />
+        <item
+            android:id="@+id/nav_transfer"
+            android:icon="@drawable/ic_menu_transfer"
+            android:title="@string/menu_transfer" />
+    </group>
 
 </menu>

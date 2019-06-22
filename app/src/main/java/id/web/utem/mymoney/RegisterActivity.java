@@ -11,11 +11,7 @@ public class RegisterActivity extends AppCompatActivity {
 
     EditText edtRegisterUsername;
     EditText edtRegisterPassword;
-    EditText edtRegisterFullName;
     EditText edtRegisterEmail;
-    EditText edtRegisterBirthDate;
-    EditText edtRegisterBirthPlace;
-    EditText edtRegisterAddress;
     Button btnRegister;
     Button btnBackToLogin;
 
@@ -27,11 +23,7 @@ public class RegisterActivity extends AppCompatActivity {
 
         edtRegisterUsername = findViewById(R.id.edtRegisterUsername);
         edtRegisterPassword = findViewById(R.id.edtRegisterPassword);
-        edtRegisterFullName = findViewById(R.id.edtRegisterFullname);
         edtRegisterEmail = findViewById(R.id.edtRegisterEmail);
-        edtRegisterBirthDate = findViewById(R.id.edtRegisterBirthDate);
-        edtRegisterBirthPlace = findViewById(R.id.edtRegisterBirthPlace);
-        edtRegisterAddress = findViewById(R.id.edtRegisterAddress);
         btnRegister = findViewById(R.id.btnRegister);
         btnBackToLogin = findViewById(R.id.btnBackToLogin);
     }
