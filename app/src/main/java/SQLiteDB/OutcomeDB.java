@@ -29,7 +29,7 @@ public class OutcomeDB extends SQLiteOpenHelper {
             + colintId + " INTEGER PRIMARY KEY, "
             + colstrDate + " DATETIME, "
             + colstrDescription + " VARCHAR(255), "
-            + coldblAmount + " VARCHAR(255), "
+            + coldblAmount + " DOUBLE, "
             + colstrCreatedAt + " DATETIME DEFAULT CURRENT_TIMESTAMP, "
             + colintOutcomeTypeId + " INTEGER, "
             + colintBalanceId + " INTEGER, "
