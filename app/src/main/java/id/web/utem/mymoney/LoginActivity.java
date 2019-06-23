@@ -80,7 +80,12 @@ public class LoginActivity extends AppCompatActivity {
                     if (jsonObject.getBoolean("success"))
                     {
                         editor.putBoolean("logged_in", true);
-                        editor.putString("user_id", jsonObject.getString("data"));
+                        JSONObject jsonObject1 = null;
+                        jsonObject1 = jsonObject.getJSONObject("data");
+
+                        editor.putString("user_id", jsonObject1.getString("id"));
+                        editor.putString("user_name", jsonObject1.getString("full_name"));
+                        editor.putString("user_email", jsonObject1.getString("email"));
                         editor.commit();
 
                         String message = jsonObject.getString("message");
