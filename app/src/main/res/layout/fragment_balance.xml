@@ -1,14 +1,141 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".BalanceFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Hello Balance" />
 
-</FrameLayout>
+    <TableLayout
+        android:id="@+id/tlCashBalance"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginBottom="28dp"
+        android:stretchColumns="*"
+        app:layout_constraintBottom_toTopOf="@+id/tvNonCashBalance"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvCashBalance">
+
+        <TableRow
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:background="#00991818">
+
+            <TextView
+                android:id="@+id/tvTLHeadNoCashBalance"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="No"
+                android:background="#00991818"/>
+
+            <TextView
+                android:id="@+id/tvTLHeadNameCashBalance"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Name"
+                android:background="#00991818"/>
+
+            <TextView
+                android:id="@+id/tvTLHeadBalanceCashBalance"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Balance"
+                android:background="#00991818"/>
+
+            <TextView
+                android:id="@+id/tvTLHeadActionCashBalance"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Action"
+                android:background="#00991818"/>
+        </TableRow>
+
+    </TableLayout>
+
+    <TableLayout
+        android:id="@+id/tlNonCashBalance"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginBottom="39dp"
+        android:stretchColumns="*"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvNonCashBalance">
+
+        <TableRow
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:background="#00991818">
+
+            <TextView
+                android:id="@+id/tvTLHeadNoNonCashBalance"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#00991818"
+                android:text="No" />
+
+            <TextView
+                android:id="@+id/tvTLHeadBankNonCashBalance"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#00991818"
+                android:text="Bank" />
+
+            <TextView
+                android:id="@+id/tvTLHeadDebitNoNonCashBalance"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#00991818"
+                android:text="Debit No" />
+
+            <TextView
+                android:id="@+id/tvTLHeadAmountNoNonCashBalance"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#00991818"
+                android:text="Amount" />
+
+            <TextView
+                android:id="@+id/tvTLHeadActionNonCashBalance"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#00991818"
+                android:text="Action" />
+        </TableRow>
+
+    </TableLayout>
+
+    <TextView
+        android:id="@+id/tvCashBalance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/roboto"
+        android:text="Cash Balance"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/tlCashBalance"
+        app:layout_constraintStart_toStartOf="@+id/tlCashBalance"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvNonCashBalance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="1dp"
+        android:fontFamily="@font/roboto"
+        android:text="Non-Cash Balance"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/tlNonCashBalance"
+        app:layout_constraintStart_toStartOf="@+id/tlNonCashBalance"
+        app:layout_constraintTop_toBottomOf="@+id/tlCashBalance" />
+
+</android.support.constraint.ConstraintLayout>
