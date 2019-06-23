@@ -10,6 +10,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.ViewPager;
 import android.support.v4.widget.ImageViewCompat;
+import android.util.Log;
 import android.view.View;
 import android.support.v4.view.GravityCompat;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -24,8 +25,25 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.android.volley.AuthFailureError;
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.HashMap;
+import java.util.Map;
+
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+
+    private final String apiLink = "http://mymoney-api.utem.web.id/api/v1/";
+    String user_id;
 
     Toolbar toolbar;
     FloatingActionButton fab;
@@ -52,6 +70,12 @@ public class MainActivity extends AppCompatActivity
     TextView tvNavEmail;
     ImageView ivNavPicture;
 
+    // Dashboard
+    TextView tvDailyIncomeAmount;
+    TextView tvDailyOutcomeAmount;
+    TextView tvMonthlyIncomeAmount;
+    TextView tvMonthlyOutcomeAmount;
+
     SharedPreferences pref;
     SharedPreferences.Editor editor;
 
@@ -65,6 +89,12 @@ public class MainActivity extends AppCompatActivity
         tvNavUsername = findViewById(R.id.tvNavUsername);
         tvNavEmail = findViewById(R.id.tvNavEmail);
         ivNavPicture = findViewById(R.id.ivNavPicture);
+
+        // Dashboard
+        tvDailyIncomeAmount = findViewById(R.id.tvDailyIncomeAmount);
+        tvDailyOutcomeAmount = findViewById(R.id.tvDailyOutcomeAmount);
+        tvMonthlyIncomeAmount = findViewById(R.id.tvMonthlyIncomeAmount);
+
 
         mHandler = new Handler();
 
@@ -89,6 +119,8 @@ public class MainActivity extends AppCompatActivity
 
         pref = getApplicationContext().getSharedPreferences("MyMoney_Pref", 0);
         editor = pref.edit();
+
+        user_id = pref.getString("user_id", "0");
 
 
         // load nav menu header data
@@ -233,6 +265,9 @@ public class MainActivity extends AppCompatActivity
             }
         };
 
+        // Load the data for fragment
+        loadData();
+
         // If mPendingRunnable is not null, then add to the message queue
         if (mPendingRunnable != null) {
             mHandler.post(mPendingRunnable);
@@ -248,7 +283,6 @@ public class MainActivity extends AppCompatActivity
         invalidateOptionsMenu();
     }
 
-    @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
@@ -289,5 +323,50 @@ public class MainActivity extends AppCompatActivity
         loadHomeFragment();
 
         return true;
+    }
+
+    private void loadData() {
+        if (navItemIndex == 0)
+        {
+            RequestQueue requestQueue = Volley.newRequestQueue(getApplicationContext());
+            StringRequest stringRequest = new StringRequest(Request.Method.GET, apiLink +"auth.php?method=get&user_id="+user_id, new Response.Listener<String>() {
+                @Override
+                public void onResponse(String response) {
+                    JSONObject jsonObject = null;
+
+                    try {
+                        jsonObject = new JSONObject(response);
+                        tvDailyIncomeAmount.setText(jsonObject.getString("daily_income"));
+                        tvDailyOutcomeAmount.setText(jsonObject.getString("daily_outcome"));
+                        tvMonthlyIncomeAmount.setText(jsonObject.getString("monthly_income"));
+                        tvMonthlyOutcomeAmount.setText(jsonObject.getString("monthly_outcome"));
+                        Toast.makeText(getApplicationContext(), "Welcome", Toast.LENGTH_SHORT).show();
+                    } catch (JSONException e) {
+                        Toast.makeText(getApplicationContext(), "There is an error!", Toast.LENGTH_SHORT).show();
+                        Log.d("A", "Error!", e);
+                        e.printStackTrace();
+                    }
+                }
+            }, new Response.ErrorListener() {
+                @Override
+                public void onErrorResponse(VolleyError error) {
+                    Toast.makeText(getApplicationContext(),"Unable to get data for dashboard", Toast.LENGTH_SHORT).show();
+                }
+            });
+
+            requestQueue.add(stringRequest);
+        } else if (navItemIndex == 1)
+        {
+
+        } else if (navItemIndex == 2)
+        {
+
+        } else if (navItemIndex == 3)
+        {
+
+        } else if (navItemIndex == 4)
+        {
+
+        }
     }
 }
